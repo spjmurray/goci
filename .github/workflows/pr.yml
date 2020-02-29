@@ -1,7 +1,5 @@
 name: Pull Request
-on:
-  push:
-    branches: master
+on: push
 jobs:
   build:
     name: Build and Test
