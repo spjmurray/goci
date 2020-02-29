@@ -1,0 +1,10 @@
+mode: atomic
+/home/simon/src/github.com/spjmurray/goci/pkg/finbonachi/fib.go:7.30,8.12 1 115
+/home/simon/src/github.com/spjmurray/goci/pkg/finbonachi/fib.go:11.2,11.22 1 114
+/home/simon/src/github.com/spjmurray/goci/pkg/finbonachi/fib.go:14.2,15.16 2 55
+/home/simon/src/github.com/spjmurray/goci/pkg/finbonachi/fib.go:18.2,19.16 2 55
+/home/simon/src/github.com/spjmurray/goci/pkg/finbonachi/fib.go:22.2,22.19 1 55
+/home/simon/src/github.com/spjmurray/goci/pkg/finbonachi/fib.go:8.12,10.3 1 1
+/home/simon/src/github.com/spjmurray/goci/pkg/finbonachi/fib.go:11.22,13.3 1 59
+/home/simon/src/github.com/spjmurray/goci/pkg/finbonachi/fib.go:15.16,17.3 1 0
+/home/simon/src/github.com/spjmurray/goci/pkg/finbonachi/fib.go:19.16,21.3 1 0

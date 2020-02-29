@@ -1,0 +1,19 @@
+name: Pull Request
+on:
+  push:
+    branches: master
+jobs:
+  build:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-go@v1
+      with:
+        go-version: '^1.13'
+    - run: go test -race -cover -coverprofile=cover.out ./...
+    - run: go tool cover -html cover.out -o cover.html
+    - uses: actions/upload-artifact@v1
+      with:
+        name: cover.html
+        path: cover.html
