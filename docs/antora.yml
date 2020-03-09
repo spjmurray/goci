@@ -1,0 +1,6 @@
+name: goci
+title: Golang CI
+version: '0.0'
+start_page: ROOT:index.adoc
+nav:
+- modules/ROOT/nav.adoc

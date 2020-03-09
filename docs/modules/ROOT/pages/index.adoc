@@ -1,0 +1,17 @@
+= Title
+
+ifdef::env-github[]
+:imagesdir: https://github.com/spjmurray/goci/raw/master/docs/modules/ROOT/assets/images
+endif::[]
+
+[abstract]
+Lorem ipsum sit dolor amet.
+
+== Title 2
+
+A paragraph.
+
+.A Cat
+image::Thinking-of-getting-a-cat.png[]
+
+A xref:content.adoc[link].

@@ -1,0 +1,24 @@
+= Content
+
+:string: Hello World!
+
+[abstract]
+Lorem ipsum sit dolor amet.
+
+* A
+* B
+* C
+* D
+
+[NOTE]
+====
+Lorem ipsum sit dolor amet.
+====
+
+[source,python,subs="attributes,verbatim"]
+----
+def function():
+  print('{string}') # <1>
+----
+
+<1> Callout
