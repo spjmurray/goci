@@ -1,0 +1,46 @@
+name: Release
+on:
+  push:
+    # No branches are released, only correctly formatted tags.
+    branches-ignore:
+    - '*'
+    tags:
+    - 'v*'
+jobs:
+  build:
+    name: Build Release
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set Constants
+      id: constants
+      run: |
+        TAG=$(basename ${{ github.ref }})
+        echo ::set-output name=tag::${TAG}
+        echo ::set-output name=archive::goci-${TAG}.tar.gz
+    - uses: actions/checkout@v1
+    - uses: actions/setup-go@v2-beta
+      with:
+        go-version: '^1.13.3'
+    - name: Build
+      run: make
+    - name: Create Archive
+      run: tar czf ${{ steps.constants.outputs.archive }} build/bin/*
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@latest
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ steps.constants.outputs.tag }}
+        release_name: Release ${{ steps.constants.outputs.tag }}
+        draft: false
+        prerelease: false
+    - name: Upload Binary
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ${{ steps.constants.outputs.archive }}
+        asset_name: ${{ steps.constants.outputs.archive }}
+        asset_content_type: application/gzip

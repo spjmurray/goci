@@ -1,4 +1,4 @@
-package fibonachi
+package fibonacci
 
 import (
 	"fmt"
